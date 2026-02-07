@@ -1,0 +1,23 @@
+{
+  "name": "backend_anand",
+  "version": "1.0.0",
+  "description": "anand",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "wasif",
+  "license": "ISC",
+  "dependencies": {
+    "brcypt": "^1.0.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.1.6",
+    "nodemon": "^3.1.11"
+  }
+}
