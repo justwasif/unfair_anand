@@ -34,4 +34,30 @@ user.methods.ispasswordCorrect=async function (password) {
     return await bcrypt.compare(password,this.password);
     
 }
+user.methods.generateAccessToken=function(){
+    return jwt.sign(
+        {
+            _id:this._id,
+            username:this.username,
+            email:this.email
+        },
+        process.env.ACCESSES_TOKEN,
+        {
+            expiresIn:1d
+        }
+        
+    )
+}
+
+user.methods.generateRefreshToken=function(){
+    return jwt.sign(
+        {
+            _id:this._id,
+        },
+        process.env.REFRESH_TOKEN,
+        {
+            expiresIn:2d
+        }
+    )
+}
 export const User=mongoose.model("User",user);
